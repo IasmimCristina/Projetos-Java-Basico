@@ -1,4 +1,4 @@
-package Problema01;
+package Problema01ProcessoSeletivo;
 
 import java.util.Scanner;
 
@@ -14,7 +14,6 @@ public class Main {
         for (int i = 0; i < 5; i++) {
             System.out.println("Digite a alternativa correta da questão " + (i + 1) + ":");
             gabarito[i] = leitura.nextInt();
-
         }
         // b) Lendo a quantidade de alunos.
         System.out.println("Digite a quantidade de alunos que farão a prova:");
@@ -25,8 +24,6 @@ public class Main {
             for (int j = 0; j < 5; j++) {
                 System.out.println("Digite a resposta da questão " + (j + 1) + " do estudante " + (i + 1));
                 alunosRespostas[i][j] = leitura.nextInt();
-
-
             }
         }
         // c) Início da correção das provas de cada aluno. Atribuição da maior e menor nota, além da média.
@@ -35,9 +32,7 @@ public class Main {
             for (int j = 0; j < 5; j++) {
                 if (alunosRespostas[i][j] == gabarito[j]) {
                     notas[i] += 2;
-
                 }
-
             }
         }
 
@@ -46,14 +41,11 @@ public class Main {
         maiorNota = menorNota = notas[0];
         for (int i = 0; i < qtdAlunos; i++) {
             soma += notas[i];
-            if (notas[i] > maiorNota) {
+            if (notas[i] > maiorNota)
                 maiorNota = notas[i];
 
-            }
-            if (notas[i] < menorNota) {
+            if (notas[i] < menorNota)
                 menorNota = notas[i];
-
-            }
 
         }
         media = soma / qtdAlunos; //Média das notas.
@@ -65,7 +57,6 @@ public class Main {
             System.out.println("Média das notas da turma: " + media + ".");
             System.out.println("Maior nota: " + maiorNota + ".");
             System.out.println("Menor nota: " + menorNota + ".");
-
             System.out.println("---------------");
 
         }
